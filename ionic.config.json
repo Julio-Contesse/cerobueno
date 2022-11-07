@@ -1,0 +1,7 @@
+{
+  "name": "cerouno",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
