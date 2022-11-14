@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+
+import { Storage } from '@ionic/storage-angular';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -14,5 +17,12 @@ export class AppComponent {
     { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor() {}
+  
+  constructor(private nuestradb : Storage) {
+
+  }
+
+  async ngOnInit(){
+    await this.nuestradb.create();
+  }
 }
