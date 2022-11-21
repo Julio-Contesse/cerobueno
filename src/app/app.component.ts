@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 import { Storage } from '@ionic/storage-angular';
 
+import { HttpClient} from '@angular/common/http';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -18,7 +20,9 @@ export class AppComponent {
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   
-  constructor(private nuestradb : Storage) {
+  constructor(private nuestradb : Storage, 
+    private api : HttpClient) {
+      api.get("http://mipagina.cl/api/personas/")
 
   }
 
