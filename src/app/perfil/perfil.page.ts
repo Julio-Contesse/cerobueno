@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GpsService } from '../api/gps.service';
 
 @Component({
   selector: 'app-perfil',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilPage implements OnInit {
 
-  constructor() { }
+  constructor(private gps : GpsService) { 
+
+  }
 
   ngOnInit() {
+    this.gps.obtenerPosicion();
   }
 
 }
