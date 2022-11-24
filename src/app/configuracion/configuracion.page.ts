@@ -12,14 +12,15 @@ export class ConfiguracionPage implements OnInit {
     private api : ManagerService
   ) { }
 
-  ngOnInit() {
+  async ngOnInit() {  
     const pokemon = {
       nombre: "Pikachu",
       tipo: "Electrico"
     }
-    this.api.CreatePokemon(pokemon);
+    await this.api.CreatePokemon(pokemon);
 
-    console.log(this.api.GetPokemon());
+    const pokemonGet = await this.api.GetPokemon();
+    console.log(pokemonGet);
   }
 
 }

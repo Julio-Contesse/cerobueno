@@ -10,16 +10,13 @@ export class ManagerService {
     private db : Storage
   ) { }
 
-  async CreatePokemon(obj : Object){
+  async CreatePokemon(obj : any){
     await this.db.set("pokemon", obj);
-    throw "Argument Exception el pokemon fue";
-
   }
 
   async GetPokemon(){
     await this.db.get("pokemon").then((que) => {
       return que;
-
     }).catch((exception) => {
       console.error(exception);
       return null;
